@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Memoria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Juego de Memoria 🧠</h1>
+        <div class="game-info">
+            <p>Movimientos: <span id="moves">0</span></p>
+            <p>Pares Encontrados: <span id="pairs-found">0</span> / <span id="total-pairs">0</span></p>
+        </div>
+
+        <div id="game-board" class="game-board">
+            <!-- Las cartas se generarán aquí con JavaScript -->
+        </div>
+
+        <button id="playAgainButton" class="play-again" style="display: none;">Jugar de Nuevo</button>
+        <p id="win-message" class="message correct" style="display: none;">¡Felicidades! ¡Has encontrado todos los pares!</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
