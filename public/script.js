@@ -15,7 +15,7 @@ let matchedPairs = 0;
 let moves = 0;
 let lockBoard = false; // Bloquea el tablero mientras se comparan o voltean cartas
 let totalPairs = cardSymbols.length;
-
+let max_moves;
 // --- Funciones ---
 
 // Barajar un array (Algoritmo Fisher-Yates)
