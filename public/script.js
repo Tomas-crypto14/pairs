@@ -129,17 +129,20 @@ function checkWinCondition() {
     if (matchedPairs === totalPairs) {
         winMessage.style.display = 'block';
         playAgainButton.style.display = 'inline-block';
+    }else if(moves === max_moves){
+        endGame();
     }
 }
 
 function endGame(){
     console.log("Se acabo el juego");
+    playAgainButton.style.display = 'inline-block';
 }
 // Iniciar o reiniciar el juego
 function startGame() {
     // Resetear variables
     moves = 0;
-    max_moves = 30;
+    max_moves = 15;
     matchedPairs = 0;
     flippedCards = [];
     cards = [];
