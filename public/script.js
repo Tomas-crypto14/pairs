@@ -136,13 +136,14 @@ function checkWinCondition() {
 function startGame() {
     // Resetear variables
     moves = 0;
+    max_moves = 30;
     matchedPairs = 0;
     flippedCards = [];
     cards = [];
     lockBoard = false;
 
     // Resetear UI
-    movesDisplay.textContent = moves;
+    movesDisplay.textContent = `${moves}/${max_moves}`;
     pairsFoundDisplay.textContent = matchedPairs;
     winMessage.style.display = 'none';
     playAgainButton.style.display = 'none';
