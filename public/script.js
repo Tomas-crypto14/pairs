@@ -34,6 +34,7 @@ function createBoard() {
     const shuffledSymbols = shuffle([...cardSymbols, ...cardSymbols]);
     totalPairsDisplay.textContent = totalPairs; // Muestra el total de pares
     gameBoard.innerHTML = ''; // Limpia el tablero anterior
+    max_moves = 30;
 
     shuffledSymbols.forEach(symbol => {
         const cardElement = document.createElement('div');
@@ -121,7 +122,6 @@ function resetFlippedCards() {
 // Incrementar el contador de movimientos
 function incrementMoves() {
     moves++;
-    movesDisplay.textContent = moves/max_moves;
     if (moves === max_moves){
         console.log("Se acabó el juego");
     }
