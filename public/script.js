@@ -136,6 +136,8 @@ function checkWinCondition() {
 
 function endGame(){
     console.log("Se acabo el juego");
+    winMessage.style.display = 'block';
+    winMessage.textContent = `Has perdido, vuelve a intentarlo`
     playAgainButton.style.display = 'inline-block';
 }
 // Iniciar o reiniciar el juego
