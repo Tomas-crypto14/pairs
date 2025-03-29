@@ -121,7 +121,7 @@ function resetFlippedCards() {
 // Incrementar el contador de movimientos
 function incrementMoves() {
     moves++;
-    movesDisplay.textContent = `${moves} / ${max_moves}`;
+    movesDisplay.textContent = moves;
 }
 
 // Comprobar si se han encontrado todos los pares
@@ -151,7 +151,7 @@ function startGame() {
     lockBoard = false;
 
     // Resetear UI
-    movesDisplay.textContent = `${moves} / ${max_moves}`;
+    movesDisplay.textContent = moves;
     pairsFoundDisplay.textContent = matchedPairs;
     winMessage.style.display = 'none';
     playAgainButton.style.display = 'none';
