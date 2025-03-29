@@ -129,9 +129,14 @@ function checkWinCondition() {
     if (matchedPairs === totalPairs) {
         winMessage.style.display = 'block';
         playAgainButton.style.display = 'inline-block';
+    }else if(moves === max_moves){
+        endGame();
     }
 }
 
+function endGame(){
+    console.log("Se acabo el juego");
+}
 // Iniciar o reiniciar el juego
 function startGame() {
     // Resetear variables
