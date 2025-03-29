@@ -129,8 +129,6 @@ function checkWinCondition() {
     if (matchedPairs === totalPairs) {
         winMessage.style.display = 'block';
         playAgainButton.style.display = 'inline-block';
-    }else if(moves === max_moves){
-        endGame();
     }
 }
 
