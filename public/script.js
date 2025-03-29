@@ -34,7 +34,7 @@ function createBoard() {
     const shuffledSymbols = shuffle([...cardSymbols, ...cardSymbols]);
     totalPairsDisplay.textContent = totalPairs; // Muestra el total de pares
     gameBoard.innerHTML = ''; // Limpia el tablero anterior
-    movesDisplay.innerHTML = `Movimientos: ${moves} / ${max_moves}`;   
+    movesDisplay.innerHTML = `${moves} / ${max_moves}`;   
 
     shuffledSymbols.forEach(symbol => {
         const cardElement = document.createElement('div');
