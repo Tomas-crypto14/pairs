@@ -15,7 +15,7 @@ let matchedPairs = 0;
 let moves = 0;
 let lockBoard = false; // Bloquea el tablero mientras se comparan o voltean cartas
 let totalPairs = cardSymbols.length;
-
+let max_moves = 30;
 // --- Funciones ---
 
 // Barajar un array (Algoritmo Fisher-Yates)
@@ -121,7 +121,15 @@ function resetFlippedCards() {
 // Incrementar el contador de movimientos
 function incrementMoves() {
     moves++;
-    movesDisplay.textContent = moves;
+    movesDisplay.textContent = moves/max_moves;
+    if (moves === max_moves){
+        console.log("Se acabó el juego");
+    }
+}
+
+//Parar el juego
+function endGame(){
+    gameBoard.disabled = true;
 }
 
 // Comprobar si se han encontrado todos los pares
