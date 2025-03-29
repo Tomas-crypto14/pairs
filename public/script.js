@@ -122,9 +122,9 @@ function resetFlippedCards() {
 // Incrementar el contador de movimientos
 function incrementMoves() {
     moves++;
-    if (moves === max_moves){
+    /*if (moves === max_moves){
         console.log("Se acabó el juego");
-    }
+    }*/
 }
 
 //Parar el juego
