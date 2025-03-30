@@ -124,6 +124,7 @@ function fallido(){
         fallo.style.display = 'block';
     }, 1000)
     fallo.style.display = 'none';
+    fallo.style.display = '';
 }
 
 // Limpiar el array de cartas volteadas y desbloquear tablero
