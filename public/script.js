@@ -10,7 +10,7 @@ const fallo = document.getElementById("fallo");
 // --- Variables del Juego ---
 // Usamos emojis para que sea más visual y divertido
 const cardSymbols = ['🍎', '🍌', '🍇', '🍓', '🍒', '🍑', '🍍', '🥝'];
-const animalSymbols = ['🫎', '🐔', '🐯', '🕷️', '🐘', '🐷', '🐵', '🐧']
+const animalSymbols = ['🫎', '🐔', '🐯', '🕷️', '🐘', '🐷', '🐵', '🐧'];
 let cards = []; // Array para guardar la información de cada carta
 let flippedCards = []; // Almacena las 2 cartas volteadas temporalmente
 let matchedPairs = 0;
