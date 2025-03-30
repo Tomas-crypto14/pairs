@@ -131,16 +131,19 @@ function resetFlippedCards() {
 function incrementMoves() {
     moves++;
     movesDisplay.textContent = moves;
+    handleLoss();
 }
 
+function handleLoss(){
+    if (moves === max_moves){
+        endGame();
+    }
+}
 // Comprobar si se han encontrado todos los pares
 function checkWinCondition() {
     if (matchedPairs === totalPairs) {
         winMessage.style.display = 'block';
         playAgainButton.style.display = 'inline-block';
-        if(moves === max_moves){
-            endGame();
-        }
     }
     /*if(moves === max_moves){
         endGame();
