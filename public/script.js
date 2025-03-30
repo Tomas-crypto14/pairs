@@ -138,10 +138,13 @@ function checkWinCondition() {
     if (matchedPairs === totalPairs) {
         winMessage.style.display = 'block';
         playAgainButton.style.display = 'inline-block';
+        if(moves === max_moves){
+            endGame();
+        }
     }
-    if(moves === max_moves){
+    /*if(moves === max_moves){
         endGame();
-    }
+    }*/
 }
 
 function endGame(){
