@@ -146,6 +146,7 @@ function checkWinCondition() {
     if (matchedPairs === totalPairs) {
         winMessage.style.display = 'block';
         playAgainButton.style.display = 'inline-block';
+        winMessage.textContent = `¡Felicidades! ¡Has encontrado todos los pares!`;
     }
     /*if(moves === max_moves){
         endGame();
