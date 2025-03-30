@@ -113,14 +113,17 @@ function unflipCards() {
     setTimeout(() => {
         flippedCards.forEach(card => card.classList.remove('is-flipped'));
         resetFlippedCards();
-    }, 1000); // Retraso de 1 segundo para ver las cartas
-    fallido();
+        
+    }, 1000);
+     // Retraso de 1 segundo para ver las cartas
+     fallido();
+    fallo.style.display = 'none';
+    
 }
 
 function fallido(){
     setTimeout(() => {
-        fallo.textContent = `Oh, no! No coinciden😒`;
-        fallo.textContent = '';
+        fallo.style.display = 'block';
     }, 1000)
 }
 
