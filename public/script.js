@@ -11,12 +11,13 @@ const fallo = document.getElementById("fallo");
 // Usamos emojis para que sea más visual y divertido
 const cardSymbols = ['🍎', '🍌', '🍇', '🍓', '🍒', '🍑', '🍍', '🥝'];
 const animalSymbols = ['🫎', '🐔', '🐯', '🕷️', '🐘', '🐷', '🐵', '🐧'];
+const foodSymbols = ['🍕', '🌭', '🥪', '🥩', '🧀', '🥖', '🍰', '🥨']
 let cards = []; // Array para guardar la información de cada carta
 let flippedCards = []; // Almacena las 2 cartas volteadas temporalmente
 let matchedPairs = 0;
 let moves = 0;
 let lockBoard = false; // Bloquea el tablero mientras se comparan o voltean cartas
-let totalPairs = animalSymbols.length;
+let totalPairs = foodSymbols.length;
 let max_moves;
 // --- Funciones ---
 
@@ -34,7 +35,7 @@ function shuffle(array) {
 function createBoard() {
     winMessage.textContent = '';
     // Duplica los símbolos para tener pares y barájalos
-    const shuffledSymbols = shuffle([...animalSymbols, ...animalSymbols]);
+    const shuffledSymbols = shuffle([...foodSymbols, ...foodSymbols]);
     totalPairsDisplay.textContent = totalPairs; // Muestra el total de pares
     gameBoard.innerHTML = ''; // Limpia el tablero anterior
 
