@@ -172,6 +172,7 @@ function startGame() {
     movesDisplay.textContent = moves;
     pairsFoundDisplay.textContent = matchedPairs;
     winMessage.style.display = 'none';
+    winMessage.textContent = '';
     playAgainButton.style.display = 'none';
 
     // Crear nuevo tablero
