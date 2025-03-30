@@ -5,6 +5,7 @@ const pairsFoundDisplay = document.getElementById('pairs-found');
 const totalPairsDisplay = document.getElementById('total-pairs');
 const playAgainButton = document.getElementById('playAgainButton');
 const winMessage = document.getElementById('win-message');
+const fallo = document.getElementById("fallo");
 
 // --- Variables del Juego ---
 // Usamos emojis para que sea más visual y divertido
@@ -110,6 +111,9 @@ function unflipCards() {
         flippedCards.forEach(card => card.classList.remove('is-flipped'));
         resetFlippedCards();
     }, 1000); // Retraso de 1 segundo para ver las cartas
+    setTimeout(() => {
+        fallo.textContent = `No coinciden 😒`;
+    }, 2000);
 }
 
 // Limpiar el array de cartas volteadas y desbloquear tablero
