@@ -117,14 +117,16 @@ function unflipCards() {
     }, 1000);
      // Retraso de 1 segundo para ver las cartas
      fallido();
+     fallo.textContent = '';
 }
 
 function fallido(){
     setTimeout(() => {
+        fallo.textContent = `Oh, no! No coinciden😒`;
         fallo.style.display = 'block';
+        
     }, 1000)
     fallo.style.display = 'none';
-    fallo.textContent = '';
 }
 
 // Limpiar el array de cartas volteadas y desbloquear tablero
