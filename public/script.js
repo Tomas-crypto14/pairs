@@ -123,6 +123,7 @@ function unflipCards() {
 function fallido(){
     setTimeout(() => {
         fallo.textContent = `Oh, no! No coinciden😒`;
+        fallo.style.display = 'block';
     }, 1000)
     fallo.textContent = ``;
     fallo.style.display = 'none';
