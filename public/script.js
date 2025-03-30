@@ -110,8 +110,8 @@ function disableCards() {
 function unflipCards() {
     setTimeout(() => {
         flippedCards.forEach(card => card.classList.remove('is-flipped'));
-        resetFlippedCards();
         fallido();
+        resetFlippedCards();
     }, 1000); // Retraso de 1 segundo para ver las cartas
 }
 
@@ -119,6 +119,7 @@ function fallido(){
     setTimeout(() => {
         console.log("Oh,no! No coinciden😒");
         fallo.textContent = `Oh, no! No coinciden😒`;
+        fallo.textContent = '';
     }, 1000)
 }
 
