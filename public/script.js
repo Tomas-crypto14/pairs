@@ -117,14 +117,13 @@ function unflipCards() {
     }, 1000);
      // Retraso de 1 segundo para ver las cartas
      fallido();
-    fallo.style.display = 'none';
-    
 }
 
 function fallido(){
     setTimeout(() => {
         fallo.style.display = 'block';
     }, 1000)
+    fallo.style.display = 'none';
 }
 
 // Limpiar el array de cartas volteadas y desbloquear tablero
