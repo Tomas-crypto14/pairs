@@ -32,6 +32,7 @@ function shuffle(array) {
 
 // Crear el tablero de juego
 function createBoard() {
+    winMessage.textContent = '';
     // Duplica los símbolos para tener pares y barájalos
     const shuffledSymbols = shuffle([...animalSymbols, ...animalSymbols]);
     totalPairsDisplay.textContent = totalPairs; // Muestra el total de pares
