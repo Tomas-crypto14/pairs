@@ -6,7 +6,7 @@ const totalPairsDisplay = document.getElementById('total-pairs');
 const playAgainButton = document.getElementById('playAgainButton');
 const winMessage = document.getElementById('win-message');
 const fallo = document.getElementById("fallo");
-const timer = document.getElementById("time");
+const time = document.getElementById("time");
 
 // --- Variables del Juego ---
 // Usamos emojis para que sea más visual y divertido
@@ -20,6 +20,7 @@ let moves = 0;
 let lockBoard = false; // Bloquea el tablero mientras se comparan o voltean cartas
 let totalPairs = foodSymbols.length;
 let max_moves;
+let timer;
 // --- Funciones ---
 
 // Barajar un array (Algoritmo Fisher-Yates)
@@ -34,6 +35,7 @@ function shuffle(array) {
 
 // Crear el tablero de juego
 function createBoard() {
+    
     winMessage.textContent = '';
     // Duplica los símbolos para tener pares y barájalos
     const shuffledSymbols = shuffle([...foodSymbols, ...foodSymbols]);
