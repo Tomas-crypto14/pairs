@@ -6,6 +6,7 @@ const totalPairsDisplay = document.getElementById('total-pairs');
 const playAgainButton = document.getElementById('playAgainButton');
 const winMessage = document.getElementById('win-message');
 const fallo = document.getElementById("fallo");
+const timer = document.getElementById("time");
 
 // --- Variables del Juego ---
 // Usamos emojis para que sea más visual y divertido
@@ -165,6 +166,12 @@ function endGame(){
     winMessage.textContent = `Has perdido, vuelve a intentarlo`
     playAgainButton.style.display = 'inline-block';
 }
+
+function startTimer(){
+    elapsed_seconds = 0;
+    elapsed_seconds++;
+    timer.textContent = `${elapsed_seconds} s`;
+}
 // Iniciar o reiniciar el juego
 function startGame() {
     // Resetear variables
@@ -184,6 +191,7 @@ function startGame() {
 
     // Crear nuevo tablero
     createBoard();
+    startTimer();
 }
 
 // --- Event Listeners ---
