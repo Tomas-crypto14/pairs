@@ -184,6 +184,7 @@ function startGame() {
     flippedCards = [];
     cards = [];
     lockBoard = false;
+    timer = 0;
 
     // Resetear UI
     movesDisplay.textContent = moves;
