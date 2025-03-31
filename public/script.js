@@ -20,7 +20,6 @@ let moves = 0;
 let lockBoard = false; // Bloquea el tablero mientras se comparan o voltean cartas
 let totalPairs = foodSymbols.length;
 let max_moves;
-let timer;
 // --- Funciones ---
 
 // Barajar un array (Algoritmo Fisher-Yates)
@@ -171,8 +170,13 @@ function endGame(){
 }
 
 function startTimer(){
-    elapsed_seconds++;
-    timer.textContent = `${elapsed_seconds} s`;
+    document.getElementById("time").textContent = elapsed_seconds + "segundos";
+    if (elapsed_seconds === 0){
+        console.log("Se acabo el tiempo");
+        endGame();
+    }else{
+    elapsed_seconds--;
+setTimeout("startTimer()", 1000)}
 }
 // Iniciar o reiniciar el juego
 function startGame() {
@@ -183,7 +187,7 @@ function startGame() {
     flippedCards = [];
     cards = [];
     lockBoard = false;
-    elapsed_seconds = 0;
+    elapsed_seconds = 300;
     timer = 0;
     // Resetear UI
     movesDisplay.textContent = moves;
