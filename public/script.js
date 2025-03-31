@@ -176,7 +176,7 @@ function startTimer(){
         endGame();
     }else{
     elapsed_seconds--;
-setTimeout("startTimer()", 1000)}
+setTimeout(startTimer(), 1000)}
 }
 // Iniciar o reiniciar el juego
 function startGame() {
