@@ -167,7 +167,7 @@ function endGame(){
     winMessage.style.display = 'block';
     winMessage.textContent = `Has perdido, vuelve a intentarlo`
     playAgainButton.style.display = 'inline-block';
-    lockBoard = true;
+    //lockBoard = true;
 }
 
 function startTimer(){
@@ -184,13 +184,14 @@ function startGame() {
     cards = [];
     lockBoard = false;
     elapsed_seconds = 0;
-
+    timer = 0;
     // Resetear UI
     movesDisplay.textContent = moves;
     pairsFoundDisplay.textContent = matchedPairs;
     winMessage.style.display = 'none';
     winMessage.textContent = '';
     playAgainButton.style.display = 'none';
+    startTimer();
 
     // Crear nuevo tablero
     createBoard();
