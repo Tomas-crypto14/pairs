@@ -187,8 +187,7 @@ function startGame() {
     flippedCards = [];
     cards = [];
     lockBoard = false;
-    elapsed_seconds = 300;
-    timer = 0;
+    elapsed_seconds = 30;
     // Resetear UI
     movesDisplay.textContent = moves;
     pairsFoundDisplay.textContent = matchedPairs;
