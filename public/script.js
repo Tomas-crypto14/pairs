@@ -167,7 +167,7 @@ function endGame(){
     winMessage.style.display = 'block';
     winMessage.textContent = `Has perdido, vuelve a intentarlo`
     playAgainButton.style.display = 'inline-block';
-    //lockBoard = true;
+    lockBoard = true;
 }
 
 function startTimer(){
