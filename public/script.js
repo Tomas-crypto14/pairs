@@ -169,15 +169,18 @@ function endGame(){
     lockBoard = true;
 }
 
-function startTimer(){
-    document.getElementById("time").textContent = elapsed_seconds + "segundos";
-    if (elapsed_seconds === 0){
-        console.log("Se acabo el tiempo");
-        endGame();
-    }else{
+const tiempo = setInterval(function startTimer(){
+    document.getElementById("time").textContent = elapsed_minutes + ":" + elapsed_seconds;
     elapsed_seconds--;
-setTimeout("startTimer()", 1000)}
-}
+    if ((elapsed_minutes === 0) && (elapsed_seconds === 0)){
+        console.log("Se acabo el tiempo");
+        clearInterval(tiempo);
+        endGame();
+    }else if (elapsed_seconds === -1){
+        elapsed_minutes--;
+        elapsed_seconds = 59;
+    }
+}, 1000)
 // Iniciar o reiniciar el juego
 function startGame() {
     // Resetear variables
@@ -187,14 +190,15 @@ function startGame() {
     flippedCards = [];
     cards = [];
     lockBoard = false;
-    elapsed_seconds = 30;
+    elapsed_seconds = 0;
+    elapsed_minutes = 1;
     // Resetear UI
     movesDisplay.textContent = moves;
     pairsFoundDisplay.textContent = matchedPairs;
     winMessage.style.display = 'none';
     winMessage.textContent = '';
     playAgainButton.style.display = 'none';
-    startTimer();
+    //startTimer();
 
     // Crear nuevo tablero
     createBoard();
