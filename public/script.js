@@ -171,7 +171,6 @@ function endGame(){
 }
 
 function startTimer(){
-    elapsed_seconds = 0;
     elapsed_seconds++;
     timer.textContent = `${elapsed_seconds} s`;
 }
@@ -184,7 +183,7 @@ function startGame() {
     flippedCards = [];
     cards = [];
     lockBoard = false;
-    timer = 0;
+    elapsed_seconds = 0;
 
     // Resetear UI
     movesDisplay.textContent = moves;
@@ -195,7 +194,6 @@ function startGame() {
 
     // Crear nuevo tablero
     createBoard();
-    startTimer();
 }
 
 // --- Event Listeners ---
