@@ -191,11 +191,10 @@ function endGame(){
 //del timer que está en la función createBoard
 function startTimer(){
 clearInterval(timer);
-texttime.textContext = `Tienes 2 minutos`;
 timer = setInterval(() => {
     elapsed_seconds++;
     document.getElementById("time").textContent = `Tiempo: ${elapsed_seconds}`;
-    if (elapsed_seconds === 60){
+    if (elapsed_seconds === 120){
         endGame();
     }
     }, 1000);
