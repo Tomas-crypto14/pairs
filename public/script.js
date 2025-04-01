@@ -20,6 +20,8 @@ let moves = 0;
 let lockBoard = false; // Bloquea el tablero mientras se comparan o voltean cartas
 let totalPairs = foodSymbols.length;
 let max_moves;
+let timer;
+let mensaje;
 // --- Funciones ---
 
 // Barajar un array (Algoritmo Fisher-Yates)
@@ -92,6 +94,7 @@ function checkForMatch() {
     } else {
         // No es un par
         unflipCards();
+        fallido(`Oh, no! No coinciden🙄`);
     }
 }
 
@@ -118,17 +121,20 @@ function unflipCards() {
         
     }, 1000);
      // Retraso de 1 segundo para ver las cartas
-     fallido();
-     fallo.textContent = '';
 }
 
-function fallido(){
+//Esa función tiene que mostrarse cuando se volteen las cartas que no son iguales.
+//La función unflipCards solo sirve para que vuelvan a voltearse las cartas escogidas 
+//(las que no son iguales). 
+// Si llamamos a la función fallido en el unflipCards, el texto se queda y no desaparece.
+//Usarmeos un parametro y lo meteremos en el textContent de fallo.
+function fallido(mensaje){
+    fallo.textContent = mensaje;
+    fallo.style.display = 'block';
     setTimeout(() => {
-        fallo.textContent = `Oh, no! No coinciden😒`;
-        fallo.style.display = 'block';
+        fallo.style.display = 'none';
     }, 1000)
-    fallo.textContent = ``;
-    fallo.style.display = 'none';
+    
 }
 
 // Limpiar el array de cartas volteadas y desbloquear tablero
@@ -155,6 +161,7 @@ function checkWinCondition() {
         winMessage.style.display = 'block';
         playAgainButton.style.display = 'inline-block';
         winMessage.textContent = `¡Felicidades! ¡Has encontrado todos los pares!`;
+        clearInterval(timer);
     }
     /*if(moves === max_moves){
         endGame();
@@ -167,20 +174,31 @@ function endGame(){
     winMessage.textContent = `Has perdido, vuelve a intentarlo`
     playAgainButton.style.display = 'inline-block';
     lockBoard = true;
+    clearInterval(timer);
 }
 
-const tiempo = setInterval(function startTimer(){
-    document.getElementById("time").textContent = elapsed_minutes + ":" + elapsed_seconds;
-    elapsed_seconds--;
-    if ((elapsed_minutes === 0) && (elapsed_seconds === 0)){
-        console.log("Se acabo el tiempo");
+/*const tiempo = setInterval(function startTimer(){
+    document.getElementById("time").textContent = "Tiempo: " + elapsed_seconds + " segundos";
+    elapsed_seconds++;
+    if (elapsed_seconds === 31){
         clearInterval(tiempo);
         endGame();
-    }else if (elapsed_seconds === -1){
-        elapsed_minutes--;
-        elapsed_seconds = 59;
     }
-}, 1000)
+}, 1000)*/
+
+//La funcion startTimer tiene que tener un setInterval dentro junto con la variable
+//del timer que está en la función createBoard
+function startTimer(){
+clearInterval(timer);
+timer = setInterval(() => {
+    elapsed_seconds++;
+    document.getElementById("time").textContent = `Tiempo: ${elapsed_seconds}`;
+    if (elapsed_seconds === 300){
+        endGame();
+    }
+    }, 1000);
+}
+
 // Iniciar o reiniciar el juego
 function startGame() {
     // Resetear variables
@@ -191,14 +209,13 @@ function startGame() {
     cards = [];
     lockBoard = false;
     elapsed_seconds = 0;
-    elapsed_minutes = 1;
     // Resetear UI
     movesDisplay.textContent = moves;
     pairsFoundDisplay.textContent = matchedPairs;
     winMessage.style.display = 'none';
     winMessage.textContent = '';
     playAgainButton.style.display = 'none';
-    //startTimer();
+    startTimer();
 
     // Crear nuevo tablero
     createBoard();
