@@ -193,7 +193,7 @@ clearInterval(timer);
 timer = setInterval(() => {
     elapsed_seconds++;
     document.getElementById("time").textContent = `Tiempo: ${elapsed_seconds}`;
-    if (elapsed_seconds === 300){
+    if (elapsed_seconds === 60){
         endGame();
     }
     }, 1000);
