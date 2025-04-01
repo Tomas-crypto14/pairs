@@ -7,6 +7,7 @@ const playAgainButton = document.getElementById('playAgainButton');
 const winMessage = document.getElementById('win-message');
 const fallo = document.getElementById("fallo");
 const time = document.getElementById("time");
+const texttime = document.getElementById("textotime");
 
 // --- Variables del Juego ---
 // Usamos emojis para que sea más visual y divertido
@@ -190,6 +191,7 @@ function endGame(){
 //del timer que está en la función createBoard
 function startTimer(){
 clearInterval(timer);
+texttime.textContext = `Tienes 2 minutos`;
 timer = setInterval(() => {
     elapsed_seconds++;
     document.getElementById("time").textContent = `Tiempo: ${elapsed_seconds}`;
