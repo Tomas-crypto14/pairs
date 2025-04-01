@@ -203,7 +203,7 @@ timer = setInterval(() => {
 function startGame() {
     // Resetear variables
     moves = 0;
-    max_moves = 15;
+    max_moves = 30;
     matchedPairs = 0;
     flippedCards = [];
     cards = [];
